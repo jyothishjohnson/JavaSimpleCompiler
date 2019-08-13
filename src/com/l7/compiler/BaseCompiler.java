@@ -32,15 +32,15 @@ public class BaseCompiler {
         int constCount=0;
         int methCount=0;
         varCount+=(int) listLines.stream()
-                .filter(s ->Pattern
+                .filter((s) ->Pattern
                         .matches("(private)?(protected)?(public)? " +
                                 "(int)?(String)?(boolean)?(byte)?(long)?(char)? [a-zA-Z]+;",s.trim()))
                 .count();
 
         constCount+=(int) listLines.stream()
                 .filter(s ->Pattern
-                        .matches("(private)?(protected)?(public)? " +
-                                "class "+fileName
+                        .matches("(private)?(protected)?(public)? "
+                                +fileName
                                 +"\\("+"(int [a-zA-Z]+)?(int [a-zA-Z]+,String [a-zA-Z]+)?(String [a-zA-Z]+,int [a-zA-Z]+)?(String [a-zA-Z]+)?"
                                         +"\\)\\{",
                                 s.trim()))

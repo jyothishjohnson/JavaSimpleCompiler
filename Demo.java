@@ -4,10 +4,10 @@ public class Demo{
     private String stringVar;
     public char myChar;
 
-    public class Demo(){
+    public Demo(){
     }
 
-    public class Demo(int intVar){
+    public Demo(int intVar){
         this.intVar = intVar;
     }
 
