@@ -31,13 +31,13 @@ public class BaseCompiler {
         int varCount =0;
         int constCount=0;
         int methCount=0;
-        varCount+=(int) listLines.stream()
+        varCount=(int) listLines.stream()
                 .filter((s) ->Pattern
                         .matches("(private)?(protected)?(public)? " +
                                 "(int)?(String)?(boolean)?(byte)?(long)?(char)? [a-zA-Z]+;",s.trim()))
                 .count();
 
-        constCount+=(int) listLines.stream()
+        constCount=(int) listLines.stream()
                 .filter(s ->Pattern
                         .matches("(private)?(protected)?(public)? "
                                 +fileName
@@ -46,7 +46,7 @@ public class BaseCompiler {
                                 s.trim()))
                 .count();
 
-        methCount+=(int) listLines.stream()
+        methCount=(int) listLines.stream()
                 .filter(s ->Pattern
                         .matches("(private)?(protected)?(public)? " +
                                 "(int)?(String)?(boolean)?(byte)?(long)?(char)?(void)? [a-zA-Z]+"
